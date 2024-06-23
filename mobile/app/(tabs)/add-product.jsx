@@ -43,7 +43,7 @@ const AddProduct = () => {
     }
 
     return (
-        <SafeAreaView className="p-4 h-full justify-center bg-blue-500 ">
+        <SafeAreaView className="p-4 h-full justify-center bg-slate-900 ">
             <View className='FLEX justify-center items-center'>
              {/* add  icon */}
 
@@ -72,7 +72,7 @@ const AddProduct = () => {
                 />
                 <CustomInput
                     value={formData.price.toString() === 'NaN' ? '' : formData.price.toString()}
-                    label="Price (in USD)"
+                    label="Price"
                     placeholder="Enter product price"
                     onChangeText={(val) => setFormData({ ...formData, price: parseInt(val) })}
                     keyboardType="numeric"

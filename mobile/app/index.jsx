@@ -10,7 +10,7 @@ const Onboarding = () => {
     const router = useRouter();
     return (
         <SafeAreaView
-            className='bg-blue-500'
+            className='bg-slate-900'
         >
             <ScrollView
                 contentContainerStyle={{
@@ -23,10 +23,10 @@ const Onboarding = () => {
                         resizeMode='contain'
                         className='w-[240px] h-[240px]'
                     />
-                    <Text className='text-2xl font-bold font-rubik'>Explore to our app</Text>
+                    <Text className='text-2xl text-white font-bold font-rubik'>Explore to our app</Text>
                     {user?
                         <Text className='text-center text-lg text-gray-500 py-4 '>
-                        Already logged in as <Text className=' font-semibold text-blue-500'>{user?.name}</Text>
+                        Already logged in as <Text className=' font-semibold text-slate-900'>{user?.name}</Text>
                     </Text>:
                     <Text className='text-center text-lg text-gray-500 py-4 '>
                          Create an account to get started

@@ -6,10 +6,10 @@ const CustomButton = ({ title, handlePress, variant = "primary", containerStyles
         <TouchableOpacity
             disabled={isLoading}
             onPress={handlePress}
-            className={`${variant === 'primary' ? "bg-white" : "bg-white border border-blue-300"} w-full px-2 rounded-md flex flex-row justify-center items-center py-2 ${containerStyles}`}
+            className={`${variant === 'primary' ? "bg-white" : "bg-white border border-slate-400"} w-full px-2 rounded-md flex flex-row justify-center items-center py-2 ${containerStyles}`}
         >
             <Text
-                className={`${variant === "primary" ? "text-blue-500" : "text-blue-500"} text-lg font-semibold ${titleStyles}`}
+                className={`${variant === "primary" ? "text-slate-900" : "text-slate-900"} text-lg font-semibold ${titleStyles}`}
             >{title}</Text>
             {
                 isLoading &&

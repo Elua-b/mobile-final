@@ -9,7 +9,10 @@ import { useColorScheme } from '../hooks/useColorScheme.web';
 import { GestureHandlerRootView } from 'react-native-gesture-handler';
 import { ToastProvider } from 'react-native-toast-notifications';
 import { AuthProvider } from '../hooks/useAuth';
-
+import { NativeWindStyleSheet } from 'nativewind';
+NativeWindStyleSheet.setOutput({
+  default:"native"
+})
 // Prevent the splash screen from auto-hiding before asset loading is complete.
 SplashScreen.preventAutoHideAsync();
 

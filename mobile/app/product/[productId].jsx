@@ -61,7 +61,7 @@ const ProductView = () => {
 
     if (!product) return null
     return (
-        <SafeAreaView className='bg-blue-500 h-full p-3'>
+        <SafeAreaView className='bg-slate-900 h-full p-3'>
             <View className='flex-row justify-between' >
                 <TouchableOpacity
                     onPress={() => router.push('/home')}

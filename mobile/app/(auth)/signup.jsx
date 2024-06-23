@@ -43,7 +43,7 @@ const Signup = () => {
 
     return (
         <SafeAreaView>
-            <View className='h-full  justify-center px-6 bg-blue-500 items-center !text-white'>
+            <View className='h-full  justify-center px-6 bg-slate-900 items-center !text-white'>
                 <Text className='text-2xl font-semibold text-white'>Create account</Text>
              
                 <View className='w-full mt-10'>
@@ -51,18 +51,21 @@ const Signup = () => {
                         label='Username'
                         value={formData.name}
                         onChangeText={(val) => setFormData({ ...formData, name: val })}
+                        placeholder='Username'
                     />
                     <CustomInput
                         label='Email'
                         value={formData.email}
                         onChangeText={(val) => setFormData({ ...formData, email: val })}
                         containerStyles='mt-3'
+                        placeholder='bugingo@gmail.com'
                     />
                     <CustomInput
                         label='Password'
                         secureTextEntry
                         onChangeText={(val) => setFormData({ ...formData, password: val })}
                         containerStyles='mt-3'
+                        placeholder='.....'
                     />
                 </View>
                 <CustomButton
