@@ -6,6 +6,10 @@ const cookieParser = require("cookie-parser");
 const userRouter = require("./modules/users/usersRouter");
 const isAuthenticated = require("./middlewares/auth")
 const productsRouter = require("./modules/products/productsRouter")
+const swaggerJsDoc = require('swagger-jsdoc');
+const swaggerUi = require('swagger-ui-express');
+const swaggerFile = require("./swagger/swagger.json");
+const router =require ("./routes/index")
 
 const PORT = process.env.PORT || 8000;
 
@@ -33,9 +37,10 @@ app.use((req, res, next) => {
     console.log(req.originalUrl, "\t", req.method, "\t", req.url);
     next();
 });
+app.use("/api/v1/docs", swaggerUi.serve, swaggerUi.setup(swaggerFile));
 
-app.use("/users", userRouter);
-app.use("/products", isAuthenticated, productsRouter);
+app.use("/", router);
+
 app.get("/", (req, res) => {
     res.send("Hello world");
 });

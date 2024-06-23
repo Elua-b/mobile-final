@@ -5,7 +5,8 @@
   "license": "MIT",
   "scripts": {
     "dev": "nodemon  src/server.js",
-    "start": "nodemon  src/server.js"
+    "start": "nodemon  src/server.js",
+    "swagger": "node src/swagger/swagger.js"
   },
   "dependencies": {
     "@prisma/client": "^5.15.0",
@@ -16,6 +17,7 @@
     "dotenv": "^16.0.3",
     "express": "^4.18.2",
     "jsonwebtoken": "^9.0.0",
+    "swagger-autogen": "^2.23.7",
     "swagger-jsdoc": "^6.2.8",
     "swagger-ui-express": "^5.0.1",
     "zod": "^3.23.8"
