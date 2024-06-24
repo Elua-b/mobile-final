@@ -63,9 +63,9 @@ const PostView = () => {
       <View className='flex-row justify-between' >
         <TouchableOpacity
           onPress={() => router.push('/home')}
-          className='flex-row items-center h-fit'>
+          className='flex-row bg-white items-center h-fit rounded-md p-3 justify-between space-x-3'>
           <Ioicons name='arrow-back' size={24} />
-          <Text>Back to posts</Text>
+          <Text className="">Back to posts</Text>
         </TouchableOpacity>
         <CustomButton
           isLoading={deletingPost}
@@ -95,15 +95,15 @@ const PostView = () => {
             containerStyles='mt-3'
             />
         </View>
-        <CustomButton
+        {/* <CustomButton
           isLoading={updatingPost}
           title='Update Post'
           handlePress={handleSubmit}
           containerStyles='mt-8'
-          />
+          /> */}
       </View>
-      <View className='mt-6'>
-        <Text className='text-xl text-center font-rubiksemibold text-white p-4'>Comments</Text>
+      <View className='mt-6 bg-white rounded-md'>
+        <Text className='text-xl text-center font-rubiksemibold text-slate-500  p-4'>Comments</Text>
         <FlatList
           data={comments}
           keyExtractor={(item) => item.id.toString()}

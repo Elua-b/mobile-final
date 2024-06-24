@@ -1,12 +1,19 @@
+import React, { useState } from 'react';
 import CustomButton from '../../components/CustomButton';
 import { useRouter } from 'expo-router';
-import { FlatList, Image, Text, View } from 'react-native';
+import { FlatList, Image, Text, View, TextInput } from 'react-native';
 import { SafeAreaView } from 'react-native-safe-area-context';
 import usePosts from '../../hooks/usePost'; // Ensure the correct path to the hook
 
 export default function HomeScreen() {
   const { posts, isLoading, error } = usePosts();
   const router = useRouter();
+  const [searchQuery, setSearchQuery] = useState('');
+
+  const filteredPosts = posts.filter(post =>
+    post.title.toLowerCase().includes(searchQuery.toLowerCase()) ||
+    post.body.toLowerCase().includes(searchQuery.toLowerCase())
+  );
 
   if (isLoading) {
     return (
@@ -28,7 +35,7 @@ export default function HomeScreen() {
   return (
     <SafeAreaView className='bg-white h-full px-3 pt-3'>
       <FlatList
-        data={posts}
+        data={filteredPosts}
         ListEmptyComponent={() => (
           <View className='h-full justify-center items-center bg-gray-50 rounded-lg'>
             <Image
@@ -36,7 +43,7 @@ export default function HomeScreen() {
               style={{ width: 200, height: 200 }}
               className='rounded-lg'
             />
-            <Text className='text-lg text-gray-700 pt-3'>You haven't created any posts</Text>
+            <Text className='text-lg text-gray-700 pt-3'>No posts found</Text>
           </View>
         )}
         keyExtractor={(item) => item.id.toString()}
@@ -54,9 +61,18 @@ export default function HomeScreen() {
           </View>
         )}
         ListHeaderComponent={() => (
-          <View className='mb-6'>
-            <Text className='text-xl text-gray-800 font-rubiksemibold'>Welcome</Text>
-            <Text className='text-gray-500 text-base'>Here are the Posts you have created</Text>
+          <View className='mb-6 flex justify-center items-center bg-slate-900 p-2 rounded-md space-y-4'>
+            <Text className='text-xl text-white font-rubiksemibold'>Welcome on Application</Text>
+            <View className='flex-row justify-between w-full items-center p-4'>
+              <Text className='text-white'>Posts:</Text>
+              <TextInput
+                placeholder='Search Posts'
+                placeholderTextColor='gray'
+                value={searchQuery}
+                onChangeText={setSearchQuery}
+                className='border bg-white border-gray-400 text-black rounded-md px-2 py-1 w-1/2'
+              />
+            </View>
           </View>
         )}
       />
