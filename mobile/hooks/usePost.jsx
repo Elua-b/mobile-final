@@ -18,7 +18,7 @@ export default function usePosts() {
     const { data: posts, isLoading, error, mutate } = useSWR("/posts", async (url) => {
         const { data } = await axios2.get(url);
        
-        return data.filter(post => post.userId === 1);
+        return data
     });
 
     useEffect(() => {
@@ -26,6 +26,7 @@ export default function usePosts() {
     }, [])
 
     const createPost = async (post, redirect = false) => {
+      console.log(post);
         setCreatingPost(true);
         try {
           const { data: responseData } = await axios2.post("/posts", post);
