@@ -23,18 +23,7 @@ export const validateProduct = (product) => {
             message: "Price must be greater than 0"
         }
     }
-}
-export const validtePost=()=>{
-    return {
-        title: {
-            valid: post.title.length > 0,
-            message: "Title is required"
-        },
-        body: {
-            valid: post.description.length > 0,
-            message: "Description is required"
-        }
-        
-    }
+
+
 
 }
