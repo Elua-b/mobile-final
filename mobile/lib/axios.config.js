@@ -1,7 +1,7 @@
 import _ from "axios";
 import AsyncStorage from "@react-native-async-storage/async-storage";
 
-const IP_ADDRESS = "10.5.222.253"// change to your ip address
+const IP_ADDRESS = "10.5.223.175"// change to your ip address
 export const axios = _.create({
     baseURL: `http://${IP_ADDRESS}:8000`,
     timeout: 5000,// 5 seconds

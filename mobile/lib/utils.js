@@ -24,3 +24,17 @@ export const validateProduct = (product) => {
         }
     }
 }
+export const validtePost=()=>{
+    return {
+        title: {
+            valid: post.title.length > 0,
+            message: "Title is required"
+        },
+        body: {
+            valid: post.description.length > 0,
+            message: "Description is required"
+        }
+        
+    }
+
+}
